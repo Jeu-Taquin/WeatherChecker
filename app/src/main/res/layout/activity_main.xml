@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/img"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10sp"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/viewWeather"
+            android:layout_width="110sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5sp"
+            android:text="View Weather"></Button>
+
+        <Button
+            android:id="@+id/addFavory"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5sp"
+            android:text="Add to Favory"></Button>
+        <Button
+            android:id="@+id/viewFavory"
+            android:layout_width="100sp"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="5sp"
+            android:text="View Favory"></Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/nameCity"
+            android:layout_width="410sp"
+
+            android:layout_height="wrap_content"
+            android:hint="City name"
+            android:textAppearance="@style/TextAppearance.AppCompat.Body1">
+
+        </EditText>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10sp"
+        android:orientation="horizontal">
+    <ListView
+        android:id="@+id/listView1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:animateLayoutChanges="true"
+        android:background="#F8F9FB"
+        android:headerDividersEnabled="true" />
+
+
+    </LinearLayout>
+
+    </LinearLayout>
