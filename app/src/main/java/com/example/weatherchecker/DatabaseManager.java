@@ -13,7 +13,7 @@ import java.util.List;
 
 public class DatabaseManager extends SQLiteOpenHelper {
 
-    private static final String DATABASE_NAME = "Weather.db";
+    private static final String DATABASE_NAME = "Weather_Checker.db";
     private static final int DATABASE_VERSION = 2;
     Context context;
     public DatabaseManager(Context context) {
@@ -42,7 +42,12 @@ public class DatabaseManager extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(strSql);
         Log.i("DATABASE", "insertCity invoked");
     }
-
+    public void deleteCity(String name) {
+        name = name.replace("'", "''");
+        String strSql = "delete from City where name ="+name;
+        this.getWritableDatabase().execSQL(strSql);
+        Log.i("DATABASE", "deleteCity invoked");
+    }
    public ArrayAdapter<String> readCity() {
 
         ArrayAdapter<String> arrayAdapter=new ArrayAdapter<>(context,R.layout.support_simple_spinner_dropdown_item);
@@ -53,7 +58,7 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
         cursor.moveToFirst();
         while (!cursor.isAfterLast()) {
-String ch=cursor.getString(0);
+        String ch=cursor.getString(0);
          arrayAdapter.add(ch);
             cursor.moveToNext();
         }
